@@ -12,9 +12,22 @@
 }
 
 html {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
     color: var(--font-color);
     letter-spacing: 1.5px;
+    line-height: 1.5em;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: #95c7f2;
+
+}
+
+p {
+    font-size: 1.05em;
     line-height: 1.5em;
 }
 
@@ -91,8 +104,11 @@ header nav ul li a:hover {
 
 .home-left p:nth-of-type(2) {
     font-size: 5em;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1em;
+    font-family: 'Montserrat', sans-serif;
+
+
 }
 
 .home-left p:nth-of-type(3) {
@@ -165,12 +181,46 @@ header nav ul li a:hover {
 }
 
 /* Work experience */
-.work-text p:nth-child(2) {
-    padding: 1em 0;
+
+.work-experience-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2.5em 0;
 }
 
-.work-text p:nth-child(3) {
-    padding: 1.5em 0;
+.work-top-logos {
+    display: flex;
+    gap: 3em;
+    align-items: center;
+}
+
+.work-top-logo {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.work-top-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.work-bottom-logo {
+    padding-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5em;
+    overflow: hidden;
+}
+
+.work-bottom-logo img {
+    height: 46px;
+    flex-basis: auto;
 }
 
 /* =========================================================== */
@@ -184,26 +234,24 @@ header nav ul li a:hover {
     -webkit-backdrop-filter: blur(5px);
     width: 60%;
     margin: 0 auto;
-    /* text-align: center; */
 }
 
 .section-box h2 {
     text-align: center;
-    padding: 0 0 1.5em;
     line-height: 2em;
 }
 
 .institute {
     display: flex;
-    gap: 2em;
+    gap: 2.5em;
     align-items: center;
-    padding: 1em;
+    padding: 2em 1em;
 }
 
 .institute-logo {
-    width: 120px;
-    height: 120px;
-    flex-basis: 120px;
+    width: 145px;
+    height: 145px;
+    flex-basis: 145px;
     flex-shrink: 0;
     border-radius: 15px;
     overflow: hidden;
@@ -223,7 +271,7 @@ header nav ul li a:hover {
 
 .institute-details p:nth-child(1) {
     color: var(--font-color);
-    padding: 0 0 2em;
+    line-height: 2em;
 }
 
 .institute-details p {
@@ -268,8 +316,14 @@ header nav ul li a:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2.5em;
-    padding: 2em 0;
+    gap: 3em;
+    padding: 3em 0;
+}
+
+.skill-text p {
+    font-size: 1.3em;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -347,7 +401,7 @@ header nav ul li a:hover {
 }
 
 .project-card:nth-last-child(1):nth-child(odd) {
-	grid-column: 2 / span 2;
+    grid-column: 2 / span 2;
 }
 
 .project-card:hover {
@@ -542,17 +596,20 @@ textarea {
 
 .contact-box form button {
     border: none;
-    outline: none;
-    height: 35px;
+    padding: 10px 45px;
     border-radius: 20px;
-    width: 150px;
     display: block;
     margin: 0 auto;
-    font-size: 1em;
-    background: var(--higlight-color);
-    color: rgb(0, 0, 0);
-    transition: .5s;
+    font-size: 16px;
+    color: #fff;
     letter-spacing: 1px;
+
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-size: 300% 100%;
+    cursor: pointer;
+
 }
 
 ::placeholder {
@@ -565,8 +622,31 @@ textarea {
 }
 
 .contact-box form button:hover {
-    box-shadow: 0 0 10px var(--higlight-color);
-    transform: scale(1.05);
+    background-position: 90% 10%;
+    transform: scale(1.01);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.result-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+    padding-top: .7em;
+
+}
+
+.result-text-blue {
+    color: #b9dfff;
+}
+
+.result-text-green {
+    color: #00ffab;
+
+}
+
+.result-text-red {
+    color: #ff8686;
 }
 
 /* ======================= */
@@ -618,7 +698,18 @@ footer {
     }
 
     .institute {
-        padding: 1em 0;
+        padding: 1.5em 0;
+    }
+
+    .work-experience-top {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: none;
+        place-items: center;
+    }
+
+    .work-top-logo {
+        width: 70px;
+        height: 70px;
     }
 
 }
@@ -632,7 +723,6 @@ footer {
 
     .skill-set {
         flex-direction: column;
-        gap: 1.2em;
     }
 
 }
